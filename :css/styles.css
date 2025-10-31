@@ -213,6 +213,11 @@ a:hover { color: var(--teal-quiet); }
 
 .card h3 { margin: 0 0 8px; }
 .card p { color: var(--silver); }
+.card h3,
+.card p{
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
 
 /* ==================
    Bio / About Layout
