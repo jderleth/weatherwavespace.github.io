@@ -67,6 +67,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Prevent mobile auto text-zoom & normalize sizing */
+html { -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
 
 h1, h2, h3 {
   color: var(--white);
@@ -198,7 +201,8 @@ a:hover { color: var(--teal-quiet); }
   gap: 18px;
   grid-template-columns: repeat(3, minmax(0,1fr));
 }
-
+/* Let text actually wrap inside grid items (Android fix) */
+.strip-inner > * { min-width: 0; }
 .card {
   background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
   border: 1px solid rgba(229,231,235,.08);
@@ -655,6 +659,7 @@ main{ background-color:transparent; }
     margin-bottom: 12px;
     align-self: center;
   }
+   .strip-inner{ grid-template-columns: 1fr 1fr; }
   }
 }
 
@@ -666,6 +671,9 @@ main{ background-color:transparent; }
     height:auto !important;
   .about-photo{ order:-1; margin-bottom:16px; }  /* image above text on narrow */
   }
+}
+@media (max-width: 640px){
+  .strip-inner{ grid-template-columns: 1fr; }
 }
 /* ===== Footer Responsive Fix ===== */
 @media (max-width: 600px) {
