@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <title>About Us • Weatherwave Space, Inc.</title>
+  <meta name="description" content="About Weatherwave Space: meritocratic engineering culture, disciplined iteration, and the founder’s story from self-taught instrument maker to NASA and MIT to building cooperative constellations." />
+
+  <!-- Fonts + site CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./:css/styles.css" />
+  <link rel="icon" href="./:img/Logo.png" />
+
+  <!-- Page-local polish just for About (safe to move into styles.css later) -->
+  <style>
+    .prose { max-width: 75ch; }
+    .bio { display: grid; grid-template-columns: 1fr 260px; gap: 24px; align-items: start; }
+    .bio img.headshot {
+      width: 100%; max-width: 260px; height: auto; border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .bio h3 { margin-top: 0; }
+    @media (max-width: 860px){
+      .bio { grid-template-columns: 1fr; }
+      .bio img.headshot { max-width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Weatherwave Home">
+        <!-- Remove inline width/height so CSS controls the size uniformly -->
+        <img src="./:img/Logo.png" alt="Weatherwave logo" />
+      </a>
+      <nav aria-label="Primary" class="nav">
+        <a href="mission.html" class="nav-link">Mission</a>
+        <a href="technology.html" class="nav-link">Technology</a>
+        <a href="about_us.html" class="nav-link">About Us</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">About Us</h1>
+          <p class="hero-lead">
+            We design cooperative small-sat constellations with a builder’s culture: measure, improve, repeat. Weatherwave is structured as a meritocracy where ideas earn adoption and results compound.
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="about_us.html">About Us</a>
+            <a class="btn ghost" href="mission.html">See Our Mission</a>
+          </div>        
+        </div>
+        <div class="hero-art">
+          <div class="grid-orbit" role="img" aria-label="Abstract orbital grid illustration"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- The Principle -->
+    <section class="strip">
+      <div class="container">
+        <h2>The Principle</h2>
+        <div class="prose">
+          <p>
+            Weatherwave Space, Inc. was founded on a simple idea: honest engineering, clear thinking, and disciplined iteration can outperform bureaucracy. We are building a meritocracy in practice, not in name. At Weatherwave, ideas win because they are right. Every design is justified, every decision is measured, and every improvement is earned. We believe agility and rigor are not opposites; they are the foundation of sustainable excellence. Our systems, from spacecraft architecture to team structure, are built to learn continuously and improve relentlessly.
+          </p>
+          <p>
+            At Weatherwave Space, we measure success by what we build and how honestly we build it. We are proving that small, intelligent teams can achieve flagship-class performance for a fraction of the cost. Small satellites, working together, can change the world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership / Founder -->
+    <section class="strip">
+      <div class="container">
+        <h2>Weatherwave Leadership</h2>
+
+        <div class="card bio">
+          <div>
+            <h3>Jason Derleth, Founder and CEO</h3>
+            <div class="prose">
+              <p>
+                Before I ever worked on spacecraft, I taught myself how to build violins and cellos by reading books on the subject and working until they sang. That process taught me precision, structure, patience, and feedback: the same principles that drive good engineering. My undergraduate studies at St. John’s College, Annapolis, in philosophy and the history of math and science taught me how ideas evolve, how discovery happens, and how to reason from first principles. I also studied comparative literature and the classics, grounding my technical work in a broader understanding of human creativity and persistence.
+              </p>
+              <p>
+                I went to MIT not for a credential, but to learn how to build spacecraft. I earned a master’s in Aero/Astro Engineering there, despite having no formal engineering training beforehand. I supplemented that technical education with courses in business dynamics and business strategy, gaining a broader perspective on how to lead and sustain complex organizations. I learned that engineering is not just about machines, but rather about systems of people, time, and truth that build them.
+              </p>
+              <p>
+                At NASA JPL, I served as Deputy Systems Engineer for the Curiosity Mars Rover in its formulation phase. The NASA Administrator asked me to come to NASA HQ to be a core member of the Exploration Systems Architecture Study, where our team worked to develop the Agency’s plans to return to the Moon. For over a decade, I worked as Program Manager and then Program Executive of the NASA Innovative Advanced Concepts (NIAC) program, where I helped develop a community of advanced thinkers that is still innovating today. I later co-led the initial technology portfolio for the Habitable Worlds Observatory, the $10 billion follow-on to JWST, as Chief Technologist for the Physics of the Cosmos and Cosmic Origins programs.
+              </p>
+              <p>
+                After decades of helping large programs and small projects succeed, I founded Weatherwave Space to return to building, and to once again build a community of advanced thinkers that will change how spacecraft are built.
+              </p>
+            </div>
+          </div>
+
+          <!-- Replace src with your real headshot when ready -->
+          <img class="headshot" src="./:img/derleth.jpeg" alt="Headshot of Jason Derleth" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <img src="./:img/Logo.png" alt="Weatherwave logo" width="28" height="28" />
+      <span>Weatherwave Space, Inc.</span>
+    </div>
+
+    <ul class="foot-links">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><span class="muted">© <span id="y"></span> Weatherwave</span></li>
+    </ul>
+
+    <div class="foot-contact">
+      <p class="muted">
+        General inquiries: <a href="mailto:contact@weatherwavespace.com">contact@weatherwavespace.com</a><br>
+        Web: <a href="https://weatherwavespace.com">weatherwavespace.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

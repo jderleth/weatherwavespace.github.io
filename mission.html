@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Keep noindex until public launch -->
+  <meta name="robots" content="noindex,nofollow" />
+
+  <title>Mission • Weatherwave Space, Inc.</title>
+  <meta name="description" content="Weatherwave’s mission is to replace monolithic Earth-observation systems like JPSS with agile, distributed small-sat constellations that deliver flagship-class performance for a fraction of the cost while supporting both environmental monitoring and ISR resilience.">
+
+  <!-- Fonts + site CSS -->
+  <link rel="stylesheet" href="./:css/styles.css" />
+  <link rel="icon" href="./:img/Logo.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Weatherwave Home">
+        <!-- Remove inline width/height so CSS controls the size uniformly -->
+        <img src="./:img/Logo.png" alt="Weatherwave logo" />
+      </a>
+      <nav aria-label="Primary" class="nav">
+        <a href="mission.html" class="nav-link">Mission</a>
+        <a href="technology.html" class="nav-link">Technology</a>
+        <a href="about_us.html" class="nav-link">About Us</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">A Better Way to See a Changing Planet</h1>
+          <p class="hero-lead">
+            Weatherwave’s mission is to reinvent how Earth is observed from orbit, achieving flagship-class quality with agile, distributed systems that cost a fraction of traditional flagship missions.
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="technology.html">Our Approach</a>
+            <a class="btn ghost" href="about_us.html">About Us</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="grid-orbit" role="img" aria-label="Abstract orbital grid illustration"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Context -->
+    <section class="strip">
+      <div class="container">
+        <p>
+          Legacy systems like the Joint Polar Satellite System (JPSS) proved that orbital sensing can deliver global, quantitative weather and climate data, but they also revealed the limits of monolithic design: long development cycles, high single-point risk, and billion-dollar replacement costs.
+          Weatherwave exists to solve those constraints. Our architecture replaces “one-of-a-kind” satellites with <strong>cooperative constellations</strong> that continuously improve, refresh rapidly, and adapt as the planet and the mission both evolve.
+        </p>
+      </div>
+    </section>
+
+   <!-- One strip, three cards side-by-side -->
+<section class="strip">
+  <div class="container strip-inner">
+    <div class="card">
+      <h3>Flagship Performance, Startup Agility</h3>
+      <p>By leveraging modern small-sat platforms, modular payloads, and scalable manufacturing, we can reproduce and even exceed the sensing capability of large polar-orbiting observatories for roughly <strong>five percent of the cost</strong>. This is not a compromise, it is an optimization. Smaller, smarter satellites sharing calibration data and cross-referenced observations can deliver equivalent radiometric and geophysical accuracy, while launching iteratively and integrating lessons with each generation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Environmental Insight, National Awareness</h3>
+      <p>Many of the same sensing technologies that serve climate and weather forecasting also support situational awareness, disaster response, and national resilience. Weatherwave’s constellations are designed with <strong>dual-use potential</strong> from the start, so improvements in spectral sensing, temporal coverage, and data latency benefit both civil and intelligence users. We collaborate only within lawful frameworks and with transparent oversight.</p>
+    </div>
+
+    <div class="card">
+      <h3>Agility is the New Stability</h3>
+      <p>Conditions shift faster than traditional programs can adapt. By replacing a handful of billion-dollar flagships with a <strong>living network of cooperative small-sats</strong>, Weatherwave delivers persistent coverage, graceful degradation, and continuous improvement, a sensing architecture built to evolve, not expire.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <img src="./:img/Logo.png" alt="Weatherwave logo" width="28" height="28" />
+      <span>Weatherwave Space, Inc.</span>
+    </div>
+
+    <ul class="foot-links">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><span class="muted">© <span id="y"></span> Weatherwave</span></li>
+    </ul>
+
+    <div class="foot-contact">
+      <p class="muted">
+        General inquiries: <a href="mailto:contact@weatherwavespace.com">contact@weatherwavespace.com</a><br>
+        Web: <a href="https://weatherwavespace.com">weatherwavespace.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
