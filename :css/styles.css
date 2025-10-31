@@ -340,3 +340,28 @@ main{ background-color:transparent; }
     height:auto !important;
   }
 }
+
+/* ===== Footer Mobile Fix ===== */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foot-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .foot-contact {
+    text-align: center;
+    margin-top: 10px;
+    word-break: break-word;
+  }
+
+  .foot-contact a {
+    display: inline-block;
+  }
+}
