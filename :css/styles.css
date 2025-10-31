@@ -294,6 +294,21 @@ a:hover{ color:var(--teal-quiet) }
   box-shadow: 0 0 0 9999px rgba(32,198,200,.03) inset;
 }
 
+/* ---- About layout ---- */
+.about-inner{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;  /* text | image on wide screens */
+  gap:24px;
+  align-items:center;
+}
+.about-photo{
+  justify-self:center;
+  max-width:420px;
+  width:100%;
+  height:auto;
+  border-radius:12px; /* optional polish */
+}
+
 /* ---- Content strips / cards ---- */
 .strip{ padding:12px 0 16px }
 .strip-inner{
@@ -330,6 +345,7 @@ main{ background-color:transparent; }
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; text-align:left }
   .hero-art{ order:-1; min-height:260px }
+  .about-inner{ grid-template-columns:1fr; }  /* stack on medium */
 }
 
 @media (max-width: 760px){
@@ -338,6 +354,7 @@ main{ background-color:transparent; }
   .brand img{
     width:300px !important;
     height:auto !important;
+  .about-photo{ order:-1; margin-bottom:16px; }  /* image above text on narrow */
   }
 }
 /* ===== Footer Responsive Fix ===== */
@@ -374,27 +391,5 @@ main{ background-color:transparent; }
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-  }
-}
-
-/* ===== About Page Responsive Order Fix ===== */
-@media (max-width: 760px) {
-  .about-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-inner img {
-    order: -1; /* move image above text */
-    margin-bottom: 16px;
-    max-width: 80%;
-    height: auto;
-    border-radius: 12px; /* optional, keeps it looking polished */
-  }
-
-  .about-inner p {
-    text-align: left; /* or 'center' if you prefer symmetry on mobile */
   }
 }
