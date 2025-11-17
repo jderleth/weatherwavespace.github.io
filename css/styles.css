@@ -1,0 +1,356 @@
+/* ================
+   Weatherwave Base
+   ================ */
+/* Google Fonts (Inter / Orbitron / JetBrains Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --navy:#0B1220;          /* Deep Navy (bg) */
+  --ink:#111827;           /* Near-black for light themes */
+  --teal:#20C6C8;          /* Accent */
+  --teal-quiet:#19aeb0;    /* Accent hover */
+  --silver:#9BA3AF;        /* UI gray */
+  --fog:#E5E7EB;           /* Light gray divider */
+  --white:#FFFFFF;
+  --maxw:1200px;
+  --radius:16px;
+  --shadow:0 8px 28px rgba(0,0,0,.25);
+}
+/* =========================
+   Weatherwave Typography
+   ========================= */
+
+/* Font tokens */
+:root{
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: "Orbitron", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Type scale */
+  --fs-body: 18px;         /* default paragraph */
+  --lh-body: 1.6;
+  --fs-h1-min: 32px;
+  --fs-h1-max: 52px;       /* hero/title size */
+  --fs-h2: 28px;           /* section header */
+  --fs-h3: 20px;
+  --fs-nav: 16px;
+  --fs-micro: 12px;
+}
+
+/* Base */
+html, body{
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+  color: var(--white);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6{
+  margin: 0 0 0.5em;
+  color: var(--white);
+}
+
+/* Display title (accent use) */
+h1{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(var(--fs-h1-min), 5vw, var(--fs-h1-max));
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Buttons & Hero CTA layout ---- */
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:600;
+  line-height:1;
+  text-decoration:none;
+}
+
+.btn.primary{
+  background:var(--teal);
+  color:var(--navy);
+}
+.btn.primary:hover{
+  background:var(--teal-quiet);
+  color:var(--navy);
+}
+
+.btn.ghost{
+  border-color:rgba(255,255,255,.35);
+  color:var(--white);
+}
+.btn.ghost:hover{
+  border-color:var(--white);
+  background:rgba(255,255,255,.06);
+}
+
+/* Tidy hero spacing */
+.hero-copy .hero-lead{ margin:0 0 18px; }
+.hero-cta{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:6px 0 6px; }
+.micro.note{
+  margin-top:10px;
+  max-width:60ch;
+  opacity:.85;
+  font-size:14px; /* bump from 12px if you keep it */
+}
+
+/* Paragraph rhythm for readability */
+p {
+  margin-top: 0;
+  margin-bottom: 1em; /* adds natural vertical spacing between paragraphs */
+  line-height: 1.55;
+}
+/* If you prefer Inter for H1 on a given page, add class="h1-inter" to the element */
+.h1-inter{
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(var(--fs-h1-min), 5vw, var(--fs-h1-max));
+  line-height: 1.1;
+}
+
+h2{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: 1.3;
+  letter-spacing: 0.005em;
+}
+
+h3{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.35;
+}
+
+/* Body / secondary */
+p{ margin: 0 0 1em; color: var(--white); }
+.micro, small{ font-size: var(--fs-micro); line-height: 1.4; color: var(--silver); }
+
+/* Links (brand) */
+a{
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover{ color: var(--teal-quiet); }
+
+/* Nav & buttons align with guide */
+.nav-link{
+  font-family: var(--font-body);
+  font-size: var(--fs-nav);
+  font-weight: 600;               /* semi-bold */
+  letter-spacing: 0.02em;         /* slight tracking */
+  text-transform: none;           /* set .caps below if needed */
+}
+
+/* Utility: all-caps label style (optional) */
+.caps{
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* Monospace for technical bits */
+code, pre, kbd, samp{
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+pre{
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(229,231,235,0.08);
+  overflow: auto;
+}
+
+/* Ghost-style highlight nav link */
+.nav-link.ghost-highlight {
+  border: 1px solid rgba(32, 198, 200, 0.5); /* teal border */
+  color: var(--teal);                        /* teal text */
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.nav-link.ghost-highlight:hover {
+  border-color: var(--teal);
+  background: rgba(32, 198, 200, 0.10); /* subtle aqua glow */
+  color: var(--white);
+}
+
+/* ---- Global layout & theming ---- */
+html, body{
+  background-color:#0B1220;
+  color:#FFFFFF;
+  margin:0;
+  padding:0;
+}
+
+a{ color:var(--teal); text-decoration:none }
+a:hover{ color:var(--teal-quiet) }
+
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 16px;
+}
+
+/* ---- Header ---- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,18,32,.8);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid rgba(229,231,235,.06);
+  margin-bottom:0px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+/* Stack brand above nav (links under logo) */
+.header-inner{
+  display:flex;
+  flex-direction:column;         /* stacked rows */
+  align-items:flex-start;        /* left align */
+  justify-content:center;
+  gap:10px;                      /* space between rows */
+  min-height:88px;               /* ensures consistent bar height */
+  padding:12px 16px;
+}
+
+.brand{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:700;
+}
+
+/* CONSISTENT FULL-SIZE LOGO */
+.brand img{
+  width:455px !important;
+  height:75px !important;
+  max-width:none !important;
+  display:block;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.35));
+}
+
+.brand-name{ letter-spacing:.2px }
+
+/* ---- Navigation (final unified style) ---- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;                    /* wider subpage spacing */
+  margin-top: 4px;              /* small vertical offset looks balanced with logo */
+}
+
+.nav-link {
+  color: var(--teal);           /* teal like homepage */
+  font-weight: 600;
+  padding: 8px 10px;            /* subpage spacing feel */
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-link.is-active {
+  color: var(--white);
+}
+
+/* ---- Hero ---- */
+.hero{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(32,198,200,.18), transparent 60%),
+    radial-gradient(800px 400px at -10% 10%, rgba(32,198,200,.10), transparent 55%),
+    var(--navy);
+  padding:12px 0 16px;
+}
+.hero-inner{
+  display:grid; grid-template-columns: 1.1fr 0.9fr; gap:36px; align-items:center;
+}
+.hero-title{
+  font-size: clamp(32px, 5vw, 52px);
+  line-height:1.05; margin:0 0 10px;
+}
+.hero-lead{
+  color:var(--silver); font-size: clamp(18px, 2vw, 19px); margin:10 0 0px;
+}
+.hero-cta{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+.micro{ font-size:12px; color:var(--silver); margin-top:10px }
+.note{ opacity:.85 }
+
+.hero-art{ min-height:0px; display:flex; align-items:center; justify-content:center }
+.grid-orbit{
+  --size: 380px;
+  width:var(--size); height:var(--size);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.12) 0 2px, transparent 2px) 0 0/22px 22px,
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.08) 0 1px, transparent 1px) 11px 11px/22px 22px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), 0 30px 80px rgba(0,0,0,.35);
+  position:relative;
+}
+.grid-orbit::after{
+  content:"";
+  position:absolute; inset:16px;
+  border-radius:50%;
+  border:1px dashed rgba(255,255,255,.18);
+  box-shadow: 0 0 0 9999px rgba(32,198,200,.03) inset;
+}
+
+/* ---- Content strips / cards ---- */
+.strip{ padding:12px 0 16px }
+.strip-inner{
+  display:grid; gap:18px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(229,231,235,.08);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow: var(--shadow);
+}
+.card h3{ margin:0 0 8px }
+.card p{ margin:0 0 1em; color:var(--silver) }
+
+/* ---- Footer ---- */
+.site-footer{
+  border-top:1px solid rgba(229,231,235,.08);
+  padding:12px 0 16px;
+}
+.footer-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.foot-brand{ display:flex; align-items:center; gap:10px; color:var(--silver) }
+.foot-links{ display:flex; gap:16px; list-style:none; padding:0; margin:0 }
+.foot-links a{ color:var(--silver) }
+.muted{ color:var(--silver) }
+
+/* ---- Page containers ---- */
+main{ background-color:transparent; }
+
+/* ======= Responsive ======= */
+@media (max-width: 980px){
+  .hero-inner{ grid-template-columns: 1fr; text-align:left }
+  .hero-art{ order:-1; min-height:260px }
+}
+
+@media (max-width: 760px){
+  .strip-inner{ grid-template-columns: 1fr }
+  .nav{ gap:10px }
+  .brand img{
+    width:300px !important;
+    height:auto !important;
+  }
+}
