@@ -293,15 +293,16 @@ a:hover{ color:var(--teal-quiet) }
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 420px;     /* Match the original size */
-  overflow: hidden;      /* Prevent giant overflow */
+  max-width: 480px;      /* Soft size cap */
+  width: 100%;
+  margin: 0 auto;
 }
 
 .hero-art img.hero-image {
-  height: 100%;
-  width: auto;           /* Maintain aspect ratio */
-  max-width: 100%;
-  object-fit: contain;   /* Ensures clean scaling */
+  width: 100%;           /* Scale to container width */
+  height: auto;          /* Keep aspect ratio */
+  max-width: 480px;      /* Hard cap to prevent huge images */
+  object-fit: contain;
   display: block;
 }
 
