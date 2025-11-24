@@ -7,7 +7,7 @@
 :root{
   --navy:#0B1220;          /* Deep Navy (bg) */
   --ink:#111827;           /* Near-black for light themes */
-  --teal:#20C6C8;          /* Accent */
+  --teal:#01FFFF;          /* Accent */
   --teal-quiet:#19aeb0;    /* Accent hover */
   --silver:#9BA3AF;        /* UI gray */
   --fog:#E5E7EB;           /* Light gray divider */
@@ -289,23 +289,20 @@ a:hover{ color:var(--teal-quiet) }
 .micro{ font-size:12px; color:var(--silver); margin-top:10px }
 .note{ opacity:.85 }
 
-.hero-art{ min-height:0px; display:flex; align-items:center; justify-content:center }
-.grid-orbit{
-  --size: 380px;
-  width:var(--size); height:var(--size);
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.12) 0 2px, transparent 2px) 0 0/22px 22px,
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.08) 0 1px, transparent 1px) 11px 11px/22px 22px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), 0 30px 80px rgba(0,0,0,.35);
-  position:relative;
+.hero-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 420px;     /* Match the original size */
+  overflow: hidden;      /* Prevent giant overflow */
 }
-.grid-orbit::after{
-  content:"";
-  position:absolute; inset:16px;
-  border-radius:50%;
-  border:1px dashed rgba(255,255,255,.18);
-  box-shadow: 0 0 0 9999px rgba(32,198,200,.03) inset;
+
+.hero-art img.hero-image {
+  height: 100%;
+  width: auto;           /* Maintain aspect ratio */
+  max-width: 100%;
+  object-fit: contain;   /* Ensures clean scaling */
+  display: block;
 }
 
 /* ---- Content strips / cards ---- */
@@ -353,4 +350,32 @@ main{ background-color:transparent; }
     width:300px !important;
     height:auto !important;
   }
+}
+
+/* ======= Government Graphic and attribution ======= */
+.gov-lean-graphic {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.gov-lean-graphic img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+
+.gov-lean-graphic .attribution {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #9bb;
+}
+
+.gov-lean-graphic .attribution a {
+  color: #01ffff;
+  text-decoration: none;
+}
+
+.gov-lean-graphic .attribution a:hover {
+  text-decoration: underline;
 }
