@@ -399,3 +399,12 @@ main{ background-color:transparent; }
   font-size: 1.05rem;
   line-height: 1.6;
 }
+
+/* Reverse layout — image on the RIGHT, text on the LEFT */
+.market-flex.reverse {
+  flex-direction: row-reverse;
+}
+
+.card h3 {
+  text-align: center;
+}
