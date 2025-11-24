@@ -100,7 +100,7 @@ h1{
   margin-top:10px;
   max-width:60ch;
   opacity:.85;
-  font-size:14px; /* bump from 12px if you keep it */
+  font-size:14px;
 }
 
 /* Paragraph rhythm for readability */
@@ -282,9 +282,7 @@ a:hover{ color:var(--teal-quiet) }
   font-size: clamp(32px, 5vw, 52px);
   line-height:1.05; margin:0 0 10px;
 }
-.hero-lead{
-  color:var(--silver); font-size: clamp(18px, 2vw, 19px); margin:10 0 0px;
-}
+
 .hero-cta{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
 .micro{ font-size:12px; color:var(--silver); margin-top:10px }
 .note{ opacity:.85 }
@@ -293,15 +291,14 @@ a:hover{ color:var(--teal-quiet) }
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 480px;      /* Soft size cap */
-  width: 100%;
-  margin: 0 auto;
+  /* Remove max-height and overflow so we don't crop */
 }
 
 .hero-art img.hero-image {
-  width: 100%;           /* Scale to container width */
-  height: auto;          /* Keep aspect ratio */
-  max-width: 480px;      /* Hard cap to prevent huge images */
+  max-width: 100%;
+  max-height: 400px;   /* controls how tall the image can be */
+  width: auto;
+  height: auto;
   object-fit: contain;
   display: block;
 }
@@ -379,4 +376,26 @@ main{ background-color:transparent; }
 
 .gov-lean-graphic .attribution a:hover {
   text-decoration: underline;
+}
+
+.market-flex {
+  display: flex;
+  gap: 2rem;                /* space between image and text */
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.market-flex .tam-card {
+  flex: 0 0 340px;          /* fixed width for the TAM card */
+}
+
+.market-flex .tam-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.market-flex .market-text {
+  flex: 1;                  /* text fills remaining space */
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
