@@ -160,6 +160,13 @@ a:hover{ color: var(--teal-quiet); }
   }
 }
 
+@media (max-width: 380px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 /* Utility: all-caps label style (optional) */
 .caps{
   text-transform: uppercase;
