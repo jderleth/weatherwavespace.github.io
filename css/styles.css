@@ -378,31 +378,53 @@ main{ background-color:transparent; }
   text-decoration: underline;
 }
 
+/* Shared layout for TAM, Funnel, Lean sections */
 .market-flex {
   display: flex;
-  gap: 2rem;                /* space between image and text */
+  gap: 2rem;
   align-items: flex-start;
-  margin-top: 1.5rem;
 }
 
-.market-flex .tam-card {
-  flex: 0 0 340px;          /* fixed width for the TAM card */
+/* Card with image (TAM, Funnel, Lean) */
+.tam-card {
+  flex: 0 0 340px;      /* reasonable width on desktop */
+  max-width: 380px;
 }
 
-.market-flex .tam-card img {
-  width: 100%;
+/* Text column */
+.market-text {
+  flex: 1 1 auto;
+}
+
+/* Make card images responsive */
+.tam-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
 }
 
-.market-flex .market-text {
-  flex: 1;                  /* text fills remaining space */
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
+/* --- Mobile / tablet: stack vertically --- */
+@media (max-width: 768px) {
+  .market-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-/* Reverse layout — image on the RIGHT, text on the LEFT */
-.market-flex.reverse {
-  flex-direction: row-reverse;
+  .tam-card,
+  .market-text {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .tam-card img {
+    margin: 0 auto;              /* center the image on mobile */
+  }
+
+  /* Center the card titles */
+  .tam-card h3 {
+    text-align: center;
+  }
 }
 
 .card h3 {
