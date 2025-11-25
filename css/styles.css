@@ -162,8 +162,17 @@ a:hover{ color: var(--teal-quiet); }
 
 @media (max-width: 380px) {
   .nav {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 4px 8px;          /* small row/column gaps */
+  }
+
+  .nav-link {
+    flex: 0 0 50%;         /* exactly 2 items per row */
+    text-align: center;    /* center the label text */
+    font-size: 0.75rem;    /* a touch smaller on SE */
+    padding: 4px 6px;      /* a bit tighter */
   }
 }
 
