@@ -152,30 +152,6 @@ a:hover{ color: var(--teal-quiet); }
   text-transform: none;           /* set .caps below if needed */
 }
 
-/* Make nav text slightly smaller on narrower phones */
-@media (max-width: 430px) {
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 6px 8px;
-  }
-}
-
-@media (max-width: 380px) {
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px 8px;          /* small row/column gaps */
-  }
-
-  .nav-link {
-    flex: 0 0 50%;         /* exactly 2 items per row */
-    text-align: center;    /* center the label text */
-    font-size: 0.75rem;    /* a touch smaller on SE */
-    padding: 4px 6px;      /* a bit tighter */
-  }
-}
-
 /* Utility: all-caps label style (optional) */
 .caps{
   text-transform: uppercase;
@@ -453,4 +429,136 @@ main{ background-color:transparent; }
 
 .card h3 {
   text-align: center;
+}
+
+/* Force 2x2 layout for the value pillar cards */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* On very small screens, collapse to 1 column */
+@media (max-width: 640px) {
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Optional: center the card titles */
+.value-grid .card h3 {
+  text-align: center;
+}
+
+.lean-figure {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.lean-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+a.card:hover .bio {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px rgba(0,255,255,0.35);
+}
+
+.wide-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .wide-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CTA block */
+.cta-strip {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-strip h2 {
+  margin-bottom: 8px;
+}
+
+.cta-strip p {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: nowrap;        /* Try hard to keep one row on larger screens */
+  margin-top: 24px;
+}
+
+.cta-grid .btn {
+  min-width: 180px;
+  text-align: center;
+}
+
+/* Medium screens – allow wrapping into 2 rows if needed */
+@media (max-width: 1024px) {
+  .cta-grid {
+    flex-wrap: wrap;
+  }
+  .cta-grid .btn {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+/* Small phones – full width buttons */
+@media (max-width: 480px) {
+  .cta-grid .btn {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+
+/* Credibility strip */
+.cred-strip h2 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.cred-strip p {
+  max-width: 720px;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.cred-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.cred-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  width: fit-content;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .cred-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tiny-note {
+  margin-top: 8px;
+  font-size: 0.75rem;
 }
