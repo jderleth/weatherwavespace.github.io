@@ -402,6 +402,9 @@ main{ background-color:transparent; }
   max-width: 100%;
   height: auto;
   border-radius: 12px;
+  padding: 8px 8px 12px;   /* top, sides, bottom – extra room at bottom */
+  box-sizing: border-box;  /* keep image + padding within card width */
+
 }
 
 /* --- Mobile / tablet: stack vertically --- */

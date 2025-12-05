@@ -21,9 +21,9 @@
       <img src="img/Logo.png" alt="Weatherwave logo" />
     </a>
     <nav aria-label="Primary" class="nav">
+      <a href="architecture.html" class="nav-link">Our Architecture</a>
       <a href="government.html" class="nav-link">Government Solutions</a>
       <a href="commercial.html" class="nav-link">Commercial Solutions</a>
-      <a href="architecture.html" class="nav-link">Our Architecture</a>
       <a href="investors.html" class="nav-link ghost-highlight">Investor Overview</a>
       <a href="about.html" class="nav-link">About Weatherwave</a>
       <a href="press.html" class="nav-link">Press Room</a>
@@ -158,6 +158,7 @@
         </div>
 
         <div class="card small-card">
+          <h3>Target Market Penetration</h3>
           <img
             src="img/MarketPenetration.png"
             alt="Weatherwave target market penetration percentages by segment"
@@ -220,6 +221,7 @@
       <div class="market-flex">
         <!-- LEFT: Revenue chart card -->
         <div class="card small-card">
+          <h3>Estimated Revenue</h3>
           <img
             src="img/EstimatedRevenue.png"
             alt="Estimated annual recurring revenue at target market penetration"
@@ -319,19 +321,28 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="foot-brand">
-      <img src="img/W mini logo.png" alt="" width="32" height="20" />
-      <span>Weatherwave Space, Inc.</span>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="foot-brand">
+        <img src="img/W mini logo.png" alt="Weatherwave mini logo" width="32" height="20" />
+        <span>Weatherwave Space, Inc.</span>
+      </div>
+
+      <ul class="foot-links">
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><span class="muted">© <span id="y"></span> Weatherwave</span></li>
+      </ul>
+
+      <!-- IMAGE USAGE DISCLAIMER -->
+      <p class="tiny-note muted" style="margin-top: 8px; font-size: 0.75rem;">
+        Images on this site are illustrative examples. Public-domain or government-released imagery
+        is used unless otherwise credited.
+      </p>
+
     </div>
-    <ul class="foot-links">
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="mission.html">Our Architecture</a></li>
-      <li><span class="muted">© <span id="y"></span> Weatherwave</span></li>
-    </ul>
-  </div>
-</footer>
+  </footer>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
