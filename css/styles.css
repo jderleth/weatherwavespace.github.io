@@ -317,7 +317,7 @@ a:hover{ color:var(--teal-quiet) }
   box-shadow: var(--shadow);
 }
 .card h3{ margin:0 0 8px }
-.card p{ margin:0 0 1em; color:var(--silver) }
+.card p{ margin:0 0 1em; color:rgba(255,255,255,0.9) }
 
 /* ---- Footer ---- */
 .site-footer{
