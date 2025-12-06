@@ -358,8 +358,8 @@ main{ background-color:transparent; }
   }
 }
 
-/* Very small phones (e.g., iPhone SE): header is NOT sticky */
-@media (max-width: 400px) {
+/* Phones: header is NOT sticky */
+@media (max-width: 500px) {
   .site-header {
     position: static;              /* no longer sticky */
     box-shadow: 0 2px 8px rgba(0,0,0,0.35); /* keep a subtle edge if you like */
