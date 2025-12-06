@@ -342,11 +342,55 @@ main{ background-color:transparent; }
 }
 
 @media (max-width: 760px){
-  .strip-inner{ grid-template-columns: 1fr }
-  .nav{ gap:10px }
-  .brand img{
-    width:300px !important;
-    height:auto !important;
+  .strip-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;      /* one item per line */
+    align-items: flex-start;     /* left-align links */
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 300px !important;
+    height: auto !important;
+  }
+}
+
+/* Very small phones (e.g., iPhone SE): header is NOT sticky */
+@media (max-width: 400px) {
+  .site-header {
+    position: static;              /* no longer sticky */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35); /* keep a subtle edge if you like */
+  }
+
+  .header-inner {
+    padding: 8px 12px;             /* slightly tighter header */
+  }
+
+  .nav {
+    flex-direction: column;        /* one item per line */
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* Very small / sideways screens: let the header scroll away */
+@media (max-height: 500px) and (orientation: landscape) {
+  .site-header {
+    position: static;        /* no longer sticky */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4); /* optional, keep a subtle edge */
+  }
+
+  .header-inner {
+    padding: 8px 12px;       /* tighten up a bit to save vertical space */
+  }
+
+  .nav {
+    flex-direction: row;     /* keep it in a row if you like */
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 
