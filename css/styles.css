@@ -1,10 +1,10 @@
 /* ================
    Weatherwave Base
    ================ */
-/* Google Fonts (Inter / Orbitron / JetBrains Mono) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root{
+  /* Palette */
   --navy:#0B1220;          /* Deep Navy (bg) */
   --ink:#111827;           /* Near-black for light themes */
   --teal:#01FFFF;          /* Accent */
@@ -15,13 +15,8 @@
   --maxw:1200px;
   --radius:16px;
   --shadow:0 8px 28px rgba(0,0,0,.25);
-}
-/* =========================
-   Weatherwave Typography
-   ========================= */
 
-/* Font tokens */
-:root{
+  /* Font tokens */
   --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --font-display: "Orbitron", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -37,7 +32,9 @@
   --fs-micro: 12px;
 }
 
-/* Base */
+/* =========================
+   Base / Reset / Typography
+   ========================= */
 html, body{
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -47,9 +44,11 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.01em;
   color: var(--white);
+  background-color: var(--navy);
+  margin: 0;
+  padding: 0;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6{
   margin: 0 0 0.5em;
   color: var(--white);
@@ -62,6 +61,104 @@ h1{
   font-size: clamp(var(--fs-h1-min), 5vw, var(--fs-h1-max));
   line-height: 1.1;
   letter-spacing: 0.02em;
+}
+
+/* If you prefer Inter for H1 on a given page, add class="h1-inter" to the element */
+.h1-inter{
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(var(--fs-h1-min), 5vw, var(--fs-h1-max));
+  line-height: 1.1;
+}
+
+h2{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: 1.3;
+  letter-spacing: 0.005em;
+}
+
+h3{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.35;
+}
+
+/* Paragraph rhythm for readability */
+p{
+  margin: 0 0 1em; /* adds natural vertical spacing between paragraphs */
+  line-height: 1.55;
+  color: var(--white);
+}
+
+/* Body / secondary */
+.micro, small{ font-size: var(--fs-micro); line-height: 1.4; color: var(--silver); }
+.micro{ margin-top:10px }
+.note{ opacity:.85 }
+
+/* Links (brand) */
+a{
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover{ color: var(--teal-quiet); }
+
+/* Nav & buttons align with guide */
+.nav-link{
+  font-family: var(--font-body);
+  font-size: var(--fs-nav);
+  font-weight: 600;               /* semi-bold */
+  letter-spacing: 0.02em;         /* slight tracking */
+  text-transform: none;           /* set .caps below if needed */
+  color: var(--teal);             /* teal like homepage */
+  padding: 8px 10px;              /* subpage spacing feel */
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover{
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-link.is-active{
+  color: var(--white);
+}
+
+/* Ghost-style highlight nav link */
+.nav-link.ghost-highlight {
+  border: 1px solid rgba(32, 198, 200, 0.5); /* teal border */
+  color: var(--teal);                        /* teal text */
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.nav-link.ghost-highlight:hover {
+  border-color: var(--teal);
+  background: rgba(32, 198, 200, 0.10); /* subtle aqua glow */
+  color: var(--white);
+}
+
+/* Utility: all-caps label style (optional) */
+.caps{
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* Monospace for technical bits */
+code, pre, kbd, samp{
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+pre{
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(229,231,235,0.08);
+  overflow: auto;
 }
 
 /* ---- Buttons & Hero CTA layout ---- */
@@ -103,100 +200,7 @@ h1{
   font-size:14px;
 }
 
-/* Paragraph rhythm for readability */
-p {
-  margin-top: 0;
-  margin-bottom: 1em; /* adds natural vertical spacing between paragraphs */
-  line-height: 1.55;
-}
-/* If you prefer Inter for H1 on a given page, add class="h1-inter" to the element */
-.h1-inter{
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(var(--fs-h1-min), 5vw, var(--fs-h1-max));
-  line-height: 1.1;
-}
-
-h2{
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: var(--fs-h2);
-  line-height: 1.3;
-  letter-spacing: 0.005em;
-}
-
-h3{
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: var(--fs-h3);
-  line-height: 1.35;
-}
-
-/* Body / secondary */
-p{ margin: 0 0 1em; color: var(--white); }
-.micro, small{ font-size: var(--fs-micro); line-height: 1.4; color: var(--silver); }
-
-/* Links (brand) */
-a{
-  color: var(--teal);
-  text-decoration: none;
-}
-a:hover{ color: var(--teal-quiet); }
-
-/* Nav & buttons align with guide */
-.nav-link{
-  font-family: var(--font-body);
-  font-size: var(--fs-nav);
-  font-weight: 600;               /* semi-bold */
-  letter-spacing: 0.02em;         /* slight tracking */
-  text-transform: none;           /* set .caps below if needed */
-}
-
-/* Utility: all-caps label style (optional) */
-.caps{
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
-}
-
-/* Monospace for technical bits */
-code, pre, kbd, samp{
-  font-family: var(--font-mono);
-  font-size: 0.95em;
-}
-pre{
-  padding: 12px 16px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(229,231,235,0.08);
-  overflow: auto;
-}
-
-/* Ghost-style highlight nav link */
-.nav-link.ghost-highlight {
-  border: 1px solid rgba(32, 198, 200, 0.5); /* teal border */
-  color: var(--teal);                        /* teal text */
-  padding: 6px 12px;
-  border-radius: 8px;
-}
-
-.nav-link.ghost-highlight:hover {
-  border-color: var(--teal);
-  background: rgba(32, 198, 200, 0.10); /* subtle aqua glow */
-  color: var(--white);
-}
-
-/* ---- Global layout & theming ---- */
-html, body{
-  background-color:#0B1220;
-  color:#FFFFFF;
-  margin:0;
-  padding:0;
-}
-
-a{ color:var(--teal); text-decoration:none }
-a:hover{ color:var(--teal-quiet) }
-
+/* ---- Global layout ---- */
 .container{
   max-width:var(--maxw);
   margin:0 auto;
@@ -242,29 +246,12 @@ a:hover{ color:var(--teal-quiet) }
 
 .brand-name{ letter-spacing:.2px }
 
-/* ---- Navigation (final unified style) ---- */
+/* ---- Navigation ---- */
 .nav {
   display: flex;
   flex-wrap: wrap;
   gap: 22px;                    /* wider subpage spacing */
   margin-top: 4px;              /* small vertical offset looks balanced with logo */
-}
-
-.nav-link {
-  color: var(--teal);           /* teal like homepage */
-  font-weight: 600;
-  padding: 8px 10px;            /* subpage spacing feel */
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.nav-link:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.06);
-}
-
-.nav-link.is-active {
-  color: var(--white);
 }
 
 /* ---- Hero ---- */
@@ -283,15 +270,11 @@ a:hover{ color:var(--teal-quiet) }
   line-height:1.05; margin:0 0 10px;
 }
 
-.hero-cta{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
-.micro{ font-size:12px; color:var(--silver); margin-top:10px }
-.note{ opacity:.85 }
-
 .hero-art {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Remove max-height and overflow so we don't crop */
+  /* No max-height/overflow here so the art never gets cropped */
 }
 
 .hero-art img.hero-image {
@@ -316,7 +299,7 @@ a:hover{ color:var(--teal-quiet) }
   padding:22px;
   box-shadow: var(--shadow);
 }
-.card h3{ margin:0 0 8px }
+.card h3{ margin:0 0 8px; text-align: center; }
 .card p{ margin:0 0 1em; color:rgba(255,255,255,0.9) }
 
 /* ---- Footer ---- */
@@ -335,12 +318,226 @@ a:hover{ color:var(--teal-quiet) }
 /* ---- Page containers ---- */
 main{ background-color:transparent; }
 
-/* ======= Responsive ======= */
+/* ======= Government Graphic and attribution ======= */
+.gov-lean-graphic {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.gov-lean-graphic img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+
+.gov-lean-graphic .attribution {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #9bb;
+}
+
+.gov-lean-graphic .attribution a {
+  color: #01ffff;
+  text-decoration: none;
+}
+
+.gov-lean-graphic .attribution a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Shared layout for TAM, Funnel, Lean sections ======= */
+.market-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Card with image (TAM, Funnel, Lean) */
+.tam-card {
+  flex: 0 0 340px;      /* reasonable width on desktop */
+  max-width: 380px;
+}
+
+/* Text column */
+.market-text {
+  flex: 1 1 auto;
+}
+
+/* Make card images responsive */
+.tam-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  padding: 8px 8px 12px;   /* top, sides, bottom – extra room at bottom */
+  box-sizing: border-box;  /* keep image + padding within card width */
+}
+
+/* Force 2x2 layout for the value pillar cards */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* Optional: center the card titles */
+.value-grid .card h3 {
+  text-align: center;
+}
+
+.lean-figure {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.lean-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+a.card:hover .bio {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px rgba(0,255,255,0.35);
+}
+
+.wide-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* CTA block */
+.cta-strip {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-strip h2 {
+  margin-bottom: 8px;
+}
+
+.cta-strip p {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: nowrap;        /* Try hard to keep one row on larger screens */
+  margin-top: 24px;
+}
+
+.cta-grid .btn {
+  min-width: 180px;
+  text-align: center;
+}
+
+/* Credibility strip */
+.cred-strip h2 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.cred-strip p {
+  max-width: 720px;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.cred-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.cred-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  width: fit-content;
+  font-size: 0.9rem;
+}
+
+.tiny-note {
+  margin-top: 8px;
+  font-size: 0.75rem;
+}
+
+.card.small-card {
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  padding: 16px 20px;
+}
+
+.card.small-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.card.small-card p {
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* ============================================
+   Responsive (ordered widest breakpoint first;
+   blocks that share a selector are kept in the
+   same relative order as before this cleanup)
+   ============================================ */
+
+/* Medium screens: allow CTA buttons to wrap into 2 rows */
+@media (max-width: 1024px){
+  .cta-grid {
+    flex-wrap: wrap;
+  }
+  .cta-grid .btn {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+/* Tablet: stack hero content, move art above copy */
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; text-align:left }
   .hero-art{ order:-1; min-height:260px }
 }
 
+/* Tablet: collapse two-column card grids */
+@media (max-width: 860px){
+  .wide-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile / tablet: stack TAM/Funnel/Lean layout vertically */
+@media (max-width: 768px) {
+  .market-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tam-card,
+  .market-text {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .tam-card img {
+    margin: 0 auto;              /* center the image on mobile */
+  }
+
+  /* Center the card titles */
+  .tam-card h3 {
+    text-align: center;
+  }
+}
+
+/* Mobile: single-column strips, stacked nav, smaller logo */
 @media (max-width: 760px){
   .strip-inner {
     grid-template-columns: 1fr;
@@ -355,6 +552,19 @@ main{ background-color:transparent; }
   .brand img {
     width: 300px !important;
     height: auto !important;
+  }
+}
+
+/* Very small screens: collapse value grid to 1 column */
+@media (max-width: 640px) {
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) {
+  .cred-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -394,235 +604,10 @@ main{ background-color:transparent; }
   }
 }
 
-/* ======= Government Graphic and attribution ======= */
-.gov-lean-graphic {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.gov-lean-graphic img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
-}
-
-.gov-lean-graphic .attribution {
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  color: #9bb;
-}
-
-.gov-lean-graphic .attribution a {
-  color: #01ffff;
-  text-decoration: none;
-}
-
-.gov-lean-graphic .attribution a:hover {
-  text-decoration: underline;
-}
-
-/* Shared layout for TAM, Funnel, Lean sections */
-.market-flex {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-/* Card with image (TAM, Funnel, Lean) */
-.tam-card {
-  flex: 0 0 340px;      /* reasonable width on desktop */
-  max-width: 380px;
-}
-
-/* Text column */
-.market-text {
-  flex: 1 1 auto;
-}
-
-/* Make card images responsive */
-.tam-card img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  padding: 8px 8px 12px;   /* top, sides, bottom – extra room at bottom */
-  box-sizing: border-box;  /* keep image + padding within card width */
-
-}
-
-/* --- Mobile / tablet: stack vertically --- */
-@media (max-width: 768px) {
-  .market-flex {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .tam-card,
-  .market-text {
-    flex: 1 1 auto;
-    max-width: 100%;
-  }
-
-  .tam-card img {
-    margin: 0 auto;              /* center the image on mobile */
-  }
-
-  /* Center the card titles */
-  .tam-card h3 {
-    text-align: center;
-  }
-}
-
-.card h3 {
-  text-align: center;
-}
-
-/* Force 2x2 layout for the value pillar cards */
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-/* On very small screens, collapse to 1 column */
-@media (max-width: 640px) {
-  .value-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Optional: center the card titles */
-.value-grid .card h3 {
-  text-align: center;
-}
-
-.lean-figure {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-
-.lean-caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-a.card:hover .bio {
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 2px rgba(0,255,255,0.35);
-}
-
-.wide-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-}
-
-@media (max-width: 860px) {
-  .wide-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* CTA block */
-.cta-strip {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.cta-strip h2 {
-  margin-bottom: 8px;
-}
-
-.cta-strip p {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.cta-grid {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: nowrap;        /* Try hard to keep one row on larger screens */
-  margin-top: 24px;
-}
-
-.cta-grid .btn {
-  min-width: 180px;
-  text-align: center;
-}
-
-/* Medium screens – allow wrapping into 2 rows if needed */
-@media (max-width: 1024px) {
-  .cta-grid {
-    flex-wrap: wrap;
-  }
-  .cta-grid .btn {
-    flex: 1 1 calc(50% - 16px);
-  }
-}
-
 /* Small phones – full width buttons */
 @media (max-width: 480px) {
   .cta-grid .btn {
     flex: 1 1 100%;
     min-width: 100%;
   }
-}
-
-/* Credibility strip */
-.cred-strip h2 {
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.cred-strip p {
-  max-width: 720px;
-  margin: 0 0 12px 0;
-  text-align: left;
-}
-
-.cred-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  margin: 20px 0;
-}
-
-.cred-pill {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(0, 0, 0, 0.18);
-  width: fit-content;
-  font-size: 0.9rem;
-}
-
-@media (min-width: 640px) {
-  .cred-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.tiny-note {
-  margin-top: 8px;
-  font-size: 0.75rem;
-}
-
-
-.card.small-card {
-  max-width: 480px;
-  margin: 0 auto 24px auto;
-  padding: 16px 20px;
-}
-
-.card.small-card img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-.card.small-card p {
-  font-size: 0.85rem;
-  margin-top: 8px;
 }
